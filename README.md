@@ -4,7 +4,7 @@ This is a set of fixes I applied to my Fedora installation on my `HP Spectre x36
 
 ## Fixes
 
-* [Touchpad palm-rejection](#palm-rejection)
+* [Touchpad Palm Rejection](#palm-rejection)
 
 ### Palm Rejection
 
