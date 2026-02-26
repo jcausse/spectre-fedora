@@ -13,5 +13,7 @@ Thanks to `aigilea` (see [this repo](https://github.com/aigilea/hp_spectre_x360_
 Download `palm-rejection.service`, then open a terminal where the file was downloaded and run:
 
 ```bash
-sudo cp palm-rejection.service /etc/systemd/system && sudo systemctl enable palm-rejection.service && sudo systemctl start palm-rejection.service
+sudo cp palm-rejection.service /etc/systemd/system && \
+sudo systemctl enable palm-rejection.service && \
+sudo systemctl start palm-rejection.service
 ```
