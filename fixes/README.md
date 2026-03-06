@@ -1,6 +1,35 @@
 # Fixes
 
+* [WiFi D3Cold disable](#wifi-d3cold-disable)
 * [Touchpad Palm Rejection](#palm-rejection)
+
+## WiFi D3Cold disable
+
+The HP Spectre x360 16-aa0097nr includes an Intel WiFi card, as you can see using `lspci`:
+
+`01:00.0 Network controller: Intel Corporation Wi-Fi 7(802.11be) AX1775*/AX1790*/BE20*/BE401/BE1750* 2x2 (rev 1a)`
+
+When puting the laptop to sleep, the WiFi card enters a state where the Kernel is not able to wake it up again after exiting suspend mode. This state (D3Cold) needs to be disabled for the WiFi card to work properly. We use D3hot instead. To disable D3Cold every time the WiFi card is initialized, we create a udev rule by running the following commands:
+
+1. Find the PCI id of the WiFi card
+```bash
+NETWORK_CARD_PCI_ID=$(echo "0000:$(lspci | grep -i "network controller" | awk -F' ' '{print $1}')")
+```
+
+2. Create a udev rule to disable D3Cold for the WiFi card
+```bash
+echo "ACTION==\"add\", SUBSYSTEM==\"pci\", KERNEL==\"$NETWORK_CARD_PCI_ID\", ATTR{d3cold_allowed}=\"0\"" | sudo tee /etc/udev/rules.d/99-wifi-d3cold-disable.rules
+```
+
+3. Reload and trigger udev rules
+```bash
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
+4. Verify that D3Cold is disabled. It should return 0.
+```bash
+sudo cat /sys/bus/pci/devices/$NETWORK_CARD_PCI_ID/d3cold_allowed
+```
 
 ## Palm Rejection
 
