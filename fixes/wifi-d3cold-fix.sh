@@ -26,9 +26,9 @@ RETURNED_VALUE=$(sudo cat /sys/bus/pci/devices/$NETWORK_CARD_PCI_ID/d3cold_allow
 
 if [ "$RETURNED_VALUE" -eq 0 ]; then
     echo "✅ Successfully applied the fix!"
-    echo "➡️  The created udev rule is located at $RULE_FILENAME"
+    echo "➡️ The created udev rule is located at $RULE_FILENAME"
 else
     sudo rm $RULE_FILENAME
-    echo "❌  Failed to apply the fix!"
-    echo "➡️  No udev rule was created."
+    echo "❌ Failed to apply the fix!"
+    echo "➡️ No udev rule was created."
 fi
