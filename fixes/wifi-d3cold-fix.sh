@@ -17,7 +17,11 @@ echo "ACTION==\"add\", SUBSYSTEM==\"pci\", KERNEL==\"$NETWORK_CARD_PCI_ID\", ATT
 echo "> Reloading udev rules"
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
-# 4. Verify that D3Cold is disabled. It should return 0.
+# 4. Wait for udev to apply the rule
+echo "> Waiting for udev to apply the rule"
+sudo udevadm settle
+
+# 5. Verify that D3Cold is disabled. It should return 0.
 echo "> Verifying D3Cold is disabled"
 RETURNED_VALUE=$(sudo cat /sys/bus/pci/devices/$NETWORK_CARD_PCI_ID/d3cold_allowed)
 
