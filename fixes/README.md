@@ -12,10 +12,8 @@ The HP Spectre x360 16-aa0097nr includes an Intel WiFi card, as you can see usin
 When puting the laptop to sleep, the WiFi card enters a state where the Kernel is not able to wake it up again after exiting suspend mode. This state (D3Cold) needs to be disabled for the WiFi card to work properly. We use D3hot instead. To disable D3cold every time the WiFi card is initialized, run the following command. It will download the [fix script](https://raw.githubusercontent.com/jcausse/spectre-fedora/main/fixes/wifi-d3cold-fix.sh), make it executable, run it, and then delete it.
 
 ```bash
-wget https://raw.githubusercontent.com/jcausse/spectre-fedora/main/fixes/wifi-d3cold-fix.sh -O wifi-d3cold-fix.sh && \
-sudo chmod +x wifi-d3cold-fix.sh && \
-./wifi-d3cold-fix.sh && \
-rm wifi-d3cold-fix.sh
+wget https://raw.githubusercontent.com/jcausse/spectre-fedora/main/fixes/wifi-d3cold-fix.sh && \
+sudo chmod +x wifi-d3cold-fix.sh && ./wifi-d3cold-fix.sh && rm wifi-d3cold-fix.sh
 ```
 
 ## Palm Rejection
