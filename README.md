@@ -5,6 +5,7 @@ This is a set of fixes and customizations I applied to my **Fedora Workstation**
 * [WiFi D3Cold disable](#wifi-d3cold-disable)
 * [Touchpad Palm Rejection](#touchpad-palm-rejection)
 * [Disable Touchpad When Mouse Connected](#disable-touchpad-when-mouse-connected)
+* [Disable Touchpad Acceleration](#disable-touchpad-acceleration)
 
 ---
 
@@ -66,3 +67,16 @@ GNOME does not include an option by default to disable the touchpad when an exte
 ```bash
 gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse
 ```
+
+---
+
+## Disable Touchpad Acceleration
+
+Touchpad acceleration can be very upsetting. If you wish to disable it, run:
+
+```bash
+gsettings set org.gnome.desktop.peripherals.touchpad accel-profile flat
+```
+
+---
+
