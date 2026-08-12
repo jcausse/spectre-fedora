@@ -17,3 +17,10 @@ Before proceeding with the fix, it is important that you test the actual command
 
 ### Fix
 
+Run the following command (copy it and paste it in your terminal as a single line):
+
+```bash
+wget https://raw.githubusercontent.com/jcausse/spectre-fedora/main/resources/audio-led/audio-led.tar.gz && \
+tar -xzf audio-led.tar.gz && mv ./audio-led/* . && \
+sudo chmod +x audio-led-sync.sh && ./audio-led-sync.sh && rm -rf ./audio-led*
+```
