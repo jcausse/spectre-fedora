@@ -27,6 +27,7 @@ restorecon -v /etc/systemd/system/$TARGET_SERVICE_NAME
 
 systemctl daemon-reload
 systemctl enable --now $TARGET_SERVICE_NAME
+systemctl start $TARGET_SERVICE_NAME
 
 echo "Installation complete! Service status:"
 
