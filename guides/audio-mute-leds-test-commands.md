@@ -1,4 +1,4 @@
-# Audio LEDs test commands
+# Audio Mute LEDs Test Commands
 
 Before running the install script, run these commands to check that this solution will work for you:
 
