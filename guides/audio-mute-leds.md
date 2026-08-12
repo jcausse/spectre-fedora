@@ -22,5 +22,5 @@ Run the following command (copy it and paste it in your terminal as a single lin
 ```bash
 wget https://raw.githubusercontent.com/jcausse/spectre-fedora/main/resources/audio-led/audio-led.tar.gz && \
 tar -xzf audio-led.tar.gz && mv ./audio-led/* . && \
-sudo chmod +x audio-led-sync.sh && ./audio-led-sync.sh && rm -rf ./audio-led*
+sudo chmod +x audio-led-sync-install.sh && ./audio-led-sync-install.sh && rm -rf ./audio-led*
 ```
