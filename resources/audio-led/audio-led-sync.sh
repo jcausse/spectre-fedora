@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # ==============================================================================
 # HP Spectre Audio Mute LED Sync Script (Root Level)
 # Syncs physical F6 (Speaker Mute) and F9 (Mic Mute) LEDs via hda-verb
@@ -39,4 +40,3 @@ pactl subscribe 2>/dev/null | while read -r event; do
         update_mic_led
     fi
 done
-
