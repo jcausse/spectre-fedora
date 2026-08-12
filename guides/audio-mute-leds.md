@@ -8,5 +8,8 @@ Both of those LEDs should turn on when their respective device is muted. This wo
 
 This solution fixes this without patching and recompiling any kernel modules, for the sake of simplicity. It works by setting up a `systemd` service that subscribes to PulseAudio events to then update the LED status every time specific events are triggered.
 
+### Pre-fix test
+
+Before proceeding with the fix, it is important that you test the actual commands used to turn those LEDs on and off, to make sure they work on your machine. If they don't, then I am afraid I can't help you any further, but maybe the scripts I made
 
 https://github.com/jcausse/spectre-fedora/blob/main/resources/audio-led/test-commands.md
