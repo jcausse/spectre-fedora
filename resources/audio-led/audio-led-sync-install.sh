@@ -21,6 +21,7 @@ dnf install -y pulseaudio-utils alsa-utils alsa-tools wireplumber pipewire
 
 mv ./$TARGET_SCRIPT_NAME /usr/local/bin/$TARGET_SCRIPT_NAME
 chmod +x /usr/local/bin/$TARGET_SCRIPT_NAME
+restorecon -v /usr/local/bin/$TARGET_SCRIPT_NAME
 
 mv ./$TARGET_SERVICE_NAME /etc/systemd/system/$TARGET_SERVICE_NAME
 restorecon -v /etc/systemd/system/$TARGET_SERVICE_NAME
