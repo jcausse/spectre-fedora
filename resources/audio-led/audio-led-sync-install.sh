@@ -23,10 +23,11 @@ mv ./$TARGET_SCRIPT_NAME /usr/local/bin/$TARGET_SCRIPT_NAME
 chmod +x /usr/local/bin/$TARGET_SCRIPT_NAME
 
 mv ./$TARGET_SERVICE_NAME /etc/systemd/system/$TARGET_SERVICE_NAME
+restorecon -v /etc/systemd/system/$TARGET_SERVICE_NAME
 
 systemctl daemon-reload
 systemctl enable --now $TARGET_SERVICE_NAME
 
 echo "Installation complete! Service status:"
 
-systemctl status audio-led-sync.service --no-pager
+systemctl status $TARGET_SERVICE_NAME --no-pager
