@@ -1,6 +1,4 @@
-# Audio Mute LEDs Test Commands
-
-Before running the install script, run these commands to check that this solution will work for you:
+## Audio Mute LEDs Test Commands
 
 1. Install dependencies:
     ```bash
@@ -26,5 +24,3 @@ Before running the install script, run these commands to check that this solutio
     ```bash
     sudo hda-verb /dev/snd/hwC1D0 0x01 SET_GPIO_MASK 0x04 && sudo hda-verb /dev/snd/hwC1D0 0x01 SET_GPIO_DIR 0x04 && sudo hda-verb /dev/snd/hwC1D0 0x01 SET_GPIO_DATA 0x04
     ```
-
-If these commands work for you, proceed with the installation.
